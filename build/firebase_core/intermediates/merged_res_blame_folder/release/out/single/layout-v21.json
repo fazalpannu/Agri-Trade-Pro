@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\firebase_core\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\firebase_core\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\firebase_core\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\firebase_core\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    }
+]
