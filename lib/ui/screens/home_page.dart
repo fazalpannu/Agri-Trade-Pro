@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/plants.dart';
+import 'package:flutter_onboarding/ui/root_page.dart';
 import 'package:flutter_onboarding/ui/screens/detail_page.dart';
 import 'package:flutter_onboarding/ui/screens/widgets/plant_widget.dart';
+import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
@@ -239,8 +242,13 @@ class _HomePageState extends State<HomePage> {
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, PageTransition(child: DetailPage(plantId: _plantList[index].plantId), type: PageTransitionType.bottomToTop));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                child: DetailPage(
+                                    plantId: _plantList[index].plantId),
+                                type: PageTransitionType.bottomToTop));
                       },
                       child: PlantWidget(index: index, plantList: _plantList));
                 }),
@@ -250,4 +258,3 @@ class _HomePageState extends State<HomePage> {
     ));
   }
 }
-

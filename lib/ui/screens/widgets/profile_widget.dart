@@ -1,14 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
+import 'package:flutter_onboarding/ui/screens/signin_page.dart';
+import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
 class ProfileWidget extends StatelessWidget {
   final IconData icon;
   final String title;
-  const ProfileWidget({
+  final VoidCallback onpressed;
+  ProfileWidget({
     Key? key,
     required this.icon,
     required this.title,
+    required this.onpressed,
   }) : super(key: key);
 
   @override
@@ -38,10 +41,13 @@ class ProfileWidget extends StatelessWidget {
               ),
             ],
           ),
-          Icon(
-            Icons.arrow_forward_ios,
-            color: Constants.blackColor.withOpacity(.4),
-            size: 16,
+          InkWell(
+            onTap: onpressed,
+            child: Icon(
+              Icons.arrow_forward_ios,
+              color: Constants.blackColor.withOpacity(.4),
+              size: 16,
+            ),
           )
         ],
       ),

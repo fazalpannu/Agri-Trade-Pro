@@ -63,7 +63,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ],
                   ),
                 ),
-                SizedBox(height: size.height * 0.01),
+                SizedBox(height: size.height * 0.06),
                 GestureDetector(
                   onTap: () {
                     if (_formKey.currentState!.validate()) {

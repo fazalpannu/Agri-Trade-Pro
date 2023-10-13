@@ -51,8 +51,9 @@ class _SignUpState extends State<SignUp> {
                               )
                             : CircleAvatar(
                                 radius: 64,
-                                backgroundImage: NetworkImage(
-                                    'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'),
+                                backgroundImage: const AssetImage(
+                                  'assets/images/structimg.png',
+                                ),
                               ),
                       ),
                     ),
@@ -159,7 +160,7 @@ class _SignUpState extends State<SignUp> {
                       'Sign Up',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18.0,
+                        fontSize: 20.0,
                       ),
                     ),
                   ),
@@ -195,11 +196,11 @@ class _SignUpState extends State<SignUp> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     SizedBox(
-                      height: 30,
-                      child: Image.asset('assets/images/google.png'),
+                      height: 35,
+                      child: Image.asset('assets/images/phone.png'),
                     ),
                     Text(
-                      'Sign Up with Google',
+                      'Sign Up with Phone Number',
                       style: TextStyle(
                         color: Constants.blackColor,
                         fontSize: 18.0,

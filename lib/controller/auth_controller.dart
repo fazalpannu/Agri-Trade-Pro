@@ -1,7 +1,10 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
@@ -15,6 +18,10 @@ import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   RxInt pageIdx = 0.obs;
+
+  RxString name = ''.obs;
+  RxString photo = ''.obs;
+  RxString email = ''.obs;
 
   late Rx<File?> _pickedImage;
   RxString imagepath = ''.obs;
@@ -139,6 +146,32 @@ class AuthController extends GetxController {
         'Error Creating Account',
         e.toString(),
       );
+    }
+  }
+
+  void fetch() {
+    String uid = firebaseAuth.currentUser!.uid;
+
+    firestore.collection('agriUsers').doc(uid).get().then((value) {
+      print(value.data());
+      name.value = (value.data()! as Map<String, dynamic>)['name'];
+      photo.value = (value.data()! as Map<String, dynamic>)['profilePhoto'];
+      email.value = (value.data()! as Map<String, dynamic>)['email'];
+    });
+  }
+
+  void splash(BuildContext context) {
+    final auth = FirebaseAuth.instance;
+
+    final user = auth.currentUser;
+    if (user != null) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RootPage(),
+          ));
+    } else {
+      print('User is currently signed out!');
     }
   }
 }
