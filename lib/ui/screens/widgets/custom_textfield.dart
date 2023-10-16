@@ -21,6 +21,7 @@ class CustomTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+        autofocus: true,
         keyboardType: TextInputType.emailAddress,
         controller: controller,
         obscureText: obscureText,

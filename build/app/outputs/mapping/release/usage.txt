@@ -3555,8 +3555,6 @@ androidx.lifecycle.LifecycleRegistry:
     public static final androidx.lifecycle.LifecycleRegistry createUnsafe(androidx.lifecycle.LifecycleOwner)
     public int getObserverCount()
     public static final androidx.lifecycle.Lifecycle$State min$lifecycle_runtime_release(androidx.lifecycle.Lifecycle$State,androidx.lifecycle.Lifecycle$State)
-androidx.lifecycle.LifecycleRegistryOwner:
-    public synthetic bridge androidx.lifecycle.Lifecycle getLifecycle()
 androidx.lifecycle.Lifecycling:
     private static final int GENERATED_CALLBACK
     private static final int REFLECTIVE_CALLBACK
@@ -25083,6 +25081,7 @@ androidx.lifecycle.DefaultLifecycleObserver$-CC
 androidx.lifecycle.HasDefaultViewModelProviderFactory$-CC
 androidx.lifecycle.Lifecycle:
     private java.util.concurrent.atomic.AtomicReference internalScopeRef
+androidx.lifecycle.LifecycleRegistryOwner$-CC
 androidx.lifecycle.LiveData$LifecycleBoundObserver:
     void <init>(androidx.lifecycle.LiveData,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Observer)
     boolean isAttachedTo(androidx.lifecycle.LifecycleOwner)
