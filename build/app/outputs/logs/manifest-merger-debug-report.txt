@@ -82,6 +82,7 @@ MERGED from [:firebase_core] D:\flutter project\flutter-ui-plant-app-main\build\
 MERGED from [:image_picker_android] D:\flutter project\flutter-ui-plant-app-main\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-19:12
 MERGED from [:flutter_plugin_android_lifecycle] D:\flutter project\flutter-ui-plant-app-main\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] D:\flutter project\flutter-ui-plant-app-main\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] D:\flutter project\flutter-ui-plant-app-main\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Speed\.gradle\caches\transforms-3\cd1ef660f3346bfbc20965647b14ff6d\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.3.0] C:\Users\Speed\.gradle\caches\transforms-3\30d009f44c43db663f04945e863c979e\transformed\jetified-firebase-analytics-ktx-21.3.0\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:20.3.3] C:\Users\Speed\.gradle\caches\transforms-3\717e7e1c9ce8cb3cefefe42b6acb4b23\transformed\jetified-firebase-common-ktx-20.3.3\AndroidManifest.xml:2:1-20:12
@@ -220,6 +221,8 @@ MERGED from [:flutter_plugin_android_lifecycle] D:\flutter project\flutter-ui-pl
 MERGED from [:flutter_plugin_android_lifecycle] D:\flutter project\flutter-ui-plant-app-main\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] D:\flutter project\flutter-ui-plant-app-main\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] D:\flutter project\flutter-ui-plant-app-main\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\flutter project\flutter-ui-plant-app-main\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\flutter project\flutter-ui-plant-app-main\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Speed\.gradle\caches\transforms-3\cd1ef660f3346bfbc20965647b14ff6d\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Speed\.gradle\caches\transforms-3\cd1ef660f3346bfbc20965647b14ff6d\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.firebase:firebase-analytics-ktx:21.3.0] C:\Users\Speed\.gradle\caches\transforms-3\30d009f44c43db663f04945e863c979e\transformed\jetified-firebase-analytics-ktx-21.3.0\AndroidManifest.xml:5:5-44

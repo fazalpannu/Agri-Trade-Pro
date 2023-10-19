@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-ldpi-v4\\ic_call_answer_video_low.png"
     },
     {
-        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
@@ -176,8 +176,16 @@
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\layout\\notification_action_tombstone.xml"
     },
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-v21_launch_background.xml.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi-v4_ic_call_answer_video_low.png.flat",
@@ -400,6 +408,10 @@
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-xxhdpi-v4\\ic_call_answer.png"
     },
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable_notification_tile_bg.xml.flat",
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable\\notification_tile_bg.xml"
     },
@@ -436,24 +448,28 @@
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\mipmap-xxxhdpi_launcher_icon.png.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png"
     },
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
-        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable_common_google_signin_btn_icon_light.xml.flat",
-        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light.xml"
-    },
-    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable_common_google_signin_btn_icon_light.xml.flat",
+        "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\86a6213b8f6beeb1b8fcc1eeed1a0637\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\layout_browser_actions_context_menu_row.xml.flat",
@@ -514,6 +530,14 @@
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-hdpi-v4_ic_call_answer.png.flat",
         "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\809cf7151226e03af847c26afb9fe192\\transformed\\core-1.10.1\\res\\drawable-hdpi-v4\\ic_call_answer.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\mipmap-anydpi-v26_launcher_icon.xml.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\launcher_icon.xml"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\release\\layout_notification_template_part_chronometer.xml.flat",

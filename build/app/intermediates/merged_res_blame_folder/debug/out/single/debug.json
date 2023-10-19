@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable_launch_background.xml.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
     },
@@ -28,20 +32,40 @@
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png"
     },
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_launcher_icon.png.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png"
     },
     {
-        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-v21_launch_background.xml.flat",
-        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\mipmap-hdpi_launcher_icon.png.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png"
     },
     {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-v21_launch_background.xml.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
+    },
+    {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_launcher_icon.xml.flat",
+        "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\mipmap-anydpi-v26\\launcher_icon.xml"
     },
     {
         "merged": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\app\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",

@@ -82,6 +82,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="D:\flutter project\flutter-ui-plant-app-main\android@@:path_provider_android::release"
+      jars="D:\flutter project\flutter-ui-plant-app-main\build\path_provider_android\.transforms\83133edc328a63f024947854b6f980b8\transformed\out\jars\classes.jar"
+      resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
+      folder="D:\flutter project\flutter-ui-plant-app-main\build\path_provider_android\.transforms\83133edc328a63f024947854b6f980b8\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="D:\flutter project\flutter-ui-plant-app-main\android@@:image_picker_android::release"
       jars="D:\flutter project\flutter-ui-plant-app-main\build\image_picker_android\.transforms\25bbf166d3ec1bb2b9cd3086e2089361\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.imagepicker:image_picker_android:unspecified"

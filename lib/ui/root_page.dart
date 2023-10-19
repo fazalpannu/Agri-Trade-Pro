@@ -4,6 +4,7 @@ import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/plants.dart';
 import 'package:flutter_onboarding/ui/scan_page.dart';
 import 'package:flutter_onboarding/ui/screens/cart_page.dart';
+import 'package:flutter_onboarding/ui/screens/dash_home.dart';
 import 'package:flutter_onboarding/ui/screens/favorite_page.dart';
 import 'package:flutter_onboarding/ui/screens/home_page.dart';
 import 'package:flutter_onboarding/ui/screens/profile_page.dart';
@@ -25,7 +26,8 @@ class _RootPageState extends State<RootPage> {
   //List of the pages
   List<Widget> _widgetOptions() {
     return [
-      const HomePage(),
+      // const HomePage()
+      DashboardScreen(),
       FavoritePage(
         favoritedPlants: favorites,
       ),
