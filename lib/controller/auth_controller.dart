@@ -30,7 +30,7 @@ class AuthController extends GetxController {
   void pickImage() async {
     try {
       final pickedImage =
-          await ImagePicker().pickImage(source: ImageSource.camera);
+          await ImagePicker().pickImage(source: ImageSource.gallery);
       if (pickedImage != null) {
         Get.snackbar('Profile Picture',
             'You have successfully selected your profile picture!');

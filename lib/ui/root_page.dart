@@ -9,6 +9,7 @@ import 'package:flutter_onboarding/ui/screens/favorite_page.dart';
 import 'package:flutter_onboarding/ui/screens/home_page.dart';
 import 'package:flutter_onboarding/ui/screens/profile_page.dart';
 import 'package:flutter_onboarding/ui/screens/road_map.dart';
+import 'package:flutter_onboarding/ui/screens/signin_page.dart';
 import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -75,13 +76,26 @@ class _RootPageState extends State<RootPage> {
               onTap: () {
                 Get.to(() => const Road_map());
               },
-              child: Padding(
-                padding: const EdgeInsets.only(right: 10.0),
-                child: Icon(
-                  Icons.integration_instructions_rounded,
-                  color: Constants.primaryColor,
-                  size: 35.0,
-                ),
+              child: Icon(
+                Icons.integration_instructions_rounded,
+                color: Constants.primaryColor,
+                size: 35.0,
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                try {
+                  firebaseAuth.signOut().then((value) => Get.snackbar(
+                      "Logout", "You have successfully logged out!"));
+                  Get.to(SignIn());
+                } catch (e) {
+                  Get.snackbar("Logout", "Error Logging out");
+                }
+              },
+              child: Icon(
+                Icons.logout,
+                color: Constants.blackColor,
+                size: 30.0,
               ),
             )
           ],

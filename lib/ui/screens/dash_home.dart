@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/ui/components/card_custom.dart';
 import 'package:flutter_onboarding/ui/components/circle_progress.dart';
 import 'package:flutter_onboarding/ui/components/list_tile_custom.dart';
 import 'package:flutter_onboarding/ui/themes.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -41,7 +43,7 @@ class DashboardScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "345",
+                                      "35",
                                       style: textBold,
                                     ),
                                     Text(
@@ -70,23 +72,24 @@ class DashboardScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "NEW ACHIEVMENT",
+                              authController.email.value,
                               style: textBold2,
                             ),
                             Text(
-                              "Social Star",
+                              authController.name.value,
                               style: textBold3,
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        width: size.width / 2 - 20,
-                        height: 180,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/people.png"))),
-                      )
+                      Obx(() => Container(
+                            width: size.width / 2 - 20,
+                            height: 180,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        authController.photo.value))),
+                          ))
                     ],
                   ),
                 ),
@@ -108,7 +111,7 @@ class DashboardScreen extends StatelessWidget {
                                 color: purple1),
                             children: const <TextSpan>[
                               TextSpan(
-                                  text: " this week",
+                                  text: " this month",
                                   style: TextStyle(fontWeight: FontWeight.bold))
                             ]),
                       ),
@@ -126,7 +129,7 @@ class DashboardScreen extends StatelessWidget {
                               bgColor: purpleLight,
                               pathIcon: "line.svg",
                               title: "VISITS",
-                              subTitle: "4,324",
+                              subTitle: "24",
                             ),
                           ),
                           CardCustom(
@@ -138,7 +141,7 @@ class DashboardScreen extends StatelessWidget {
                               bgColor: greenLight,
                               pathIcon: "thumb_up.svg",
                               title: "LIKES",
-                              subTitle: "654",
+                              subTitle: "04",
                             ),
                           ),
                         ],
@@ -154,7 +157,7 @@ class DashboardScreen extends StatelessWidget {
                               bgColor: yellowLight,
                               pathIcon: "starts.svg",
                               title: "FAVORITES",
-                              subTitle: "855",
+                              subTitle: "55",
                             ),
                           ),
                           CardCustom(
@@ -166,7 +169,7 @@ class DashboardScreen extends StatelessWidget {
                               bgColor: blueLight,
                               pathIcon: "eyes.svg",
                               title: "VIEWS",
-                              subTitle: "5,436",
+                              subTitle: "36",
                             ),
                           ),
                         ],
