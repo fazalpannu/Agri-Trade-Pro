@@ -91,23 +91,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\8bfb20190d64087975a300b6415ec883\\transformed\\browser-1.4.0\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,113,179,242,304,375,447,515,582,661",
-                        "endColumns": "57,65,62,61,70,71,67,66,78,68",
-                        "endOffsets": "108,174,237,299,370,442,510,577,656,725"
-                    },
-                    "to": {
-                        "startLines": "13,14,15,16,30,31,141,143,144,145",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "661,719,785,848,1901,1972,9936,10148,10215,10294",
-                        "endColumns": "57,65,62,61,70,71,67,66,78,68",
-                        "endOffsets": "714,780,843,905,1967,2039,9999,10210,10289,10358"
-                    }
-                },
-                {
                     "source": "D:\\flutter project\\flutter-ui-plant-app-main\\android\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "2",
@@ -139,6 +122,23 @@
                         "startOffsets": "6664",
                         "endColumns": "42",
                         "endOffsets": "6702"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\8bd411850263f90b2705e6a1b23b3190\\transformed\\browser-1.5.0\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,179,242,304,375,447,515,582,661",
+                        "endColumns": "57,65,62,61,70,71,67,66,78,68",
+                        "endOffsets": "108,174,237,299,370,442,510,577,656,725"
+                    },
+                    "to": {
+                        "startLines": "13,14,15,16,30,31,141,143,144,145",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "661,719,785,848,1901,1972,9936,10148,10215,10294",
+                        "endColumns": "57,65,62,61,70,71,67,66,78,68",
+                        "endOffsets": "714,780,843,905,1967,2039,9999,10210,10289,10358"
                     }
                 },
                 {

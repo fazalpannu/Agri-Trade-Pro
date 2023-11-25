@@ -8,6 +8,8 @@ import 'package:flutter_onboarding/ui/screens/dash_home.dart';
 import 'package:flutter_onboarding/ui/screens/favorite_page.dart';
 import 'package:flutter_onboarding/ui/screens/home_page.dart';
 import 'package:flutter_onboarding/ui/screens/profile_page.dart';
+import 'package:flutter_onboarding/ui/screens/road_map.dart';
+import 'package:get/get.dart';
 import 'package:page_transition/page_transition.dart';
 
 class RootPage extends StatefulWidget {
@@ -69,10 +71,18 @@ class _RootPageState extends State<RootPage> {
                 fontSize: 24,
               ),
             ),
-            Icon(
-              Icons.notifications,
-              color: Constants.blackColor,
-              size: 30.0,
+            InkWell(
+              onTap: () {
+                Get.to(() => const Road_map());
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10.0),
+                child: Icon(
+                  Icons.integration_instructions_rounded,
+                  color: Constants.primaryColor,
+                  size: 35.0,
+                ),
+              ),
             )
           ],
         ),
