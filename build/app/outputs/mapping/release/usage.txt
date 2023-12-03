@@ -3,22 +3,27 @@ android.annotation.TargetApi
 android.support.customtabs.ICustomTabsCallback$Default
 android.support.customtabs.ICustomTabsCallback$Stub$Proxy
 android.support.customtabs.ICustomTabsCallback$Stub
+android.support.customtabs.ICustomTabsCallback$_Parcel
 android.support.customtabs.ICustomTabsCallback
 android.support.customtabs.ICustomTabsService$Default
 android.support.customtabs.ICustomTabsService$Stub$Proxy
 android.support.customtabs.ICustomTabsService$Stub
+android.support.customtabs.ICustomTabsService$_Parcel
 android.support.customtabs.ICustomTabsService
 android.support.customtabs.IPostMessageService$Default
 android.support.customtabs.IPostMessageService$Stub$Proxy
 android.support.customtabs.IPostMessageService$Stub
+android.support.customtabs.IPostMessageService$_Parcel
 android.support.customtabs.IPostMessageService
 android.support.customtabs.trusted.ITrustedWebActivityCallback$Default
 android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub$Proxy
 android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub
+android.support.customtabs.trusted.ITrustedWebActivityCallback$_Parcel
 android.support.customtabs.trusted.ITrustedWebActivityCallback
 android.support.customtabs.trusted.ITrustedWebActivityService$Default
 android.support.customtabs.trusted.ITrustedWebActivityService$Stub$Proxy
 android.support.customtabs.trusted.ITrustedWebActivityService$Stub
+android.support.customtabs.trusted.ITrustedWebActivityService$_Parcel
 android.support.customtabs.trusted.ITrustedWebActivityService
 android.support.v4.app.INotificationSideChannel$Default
 android.support.v4.app.INotificationSideChannel$Stub$Proxy
@@ -336,8 +341,29 @@ androidx.browser.customtabs.CustomTabsClient$2$2
 androidx.browser.customtabs.CustomTabsClient$2$3
 androidx.browser.customtabs.CustomTabsClient$2$4
 androidx.browser.customtabs.CustomTabsClient$2$5
+androidx.browser.customtabs.CustomTabsClient$2$6
 androidx.browser.customtabs.CustomTabsClient$2
-androidx.browser.customtabs.CustomTabsClient
+androidx.browser.customtabs.CustomTabsClient:
+    private static final java.lang.String TAG
+    private final android.content.Context mApplicationContext
+    private final android.support.customtabs.ICustomTabsService mService
+    private final android.content.ComponentName mServiceComponentName
+    void <init>(android.support.customtabs.ICustomTabsService,android.content.ComponentName,android.content.Context)
+    public androidx.browser.customtabs.CustomTabsSession attachSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
+    public static boolean bindCustomTabsService(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean bindCustomTabsServicePreservePriority(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean connectAndInitialize(android.content.Context,java.lang.String)
+    private android.support.customtabs.ICustomTabsCallback$Stub createCallbackWrapper(androidx.browser.customtabs.CustomTabsCallback)
+    private static android.app.PendingIntent createSessionId(android.content.Context,int)
+    public android.os.Bundle extraCommand(java.lang.String,android.os.Bundle)
+    public static androidx.browser.customtabs.CustomTabsSession$PendingSession newPendingSession(android.content.Context,androidx.browser.customtabs.CustomTabsCallback,int)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback,int)
+    private androidx.browser.customtabs.CustomTabsSession newSessionInternal(androidx.browser.customtabs.CustomTabsCallback,android.app.PendingIntent)
+    public boolean warmup(long)
+androidx.browser.customtabs.CustomTabsIntent$ActivityHeightResizeBehavior
+androidx.browser.customtabs.CustomTabsIntent$Api24Impl:
+    private void <init>()
 androidx.browser.customtabs.CustomTabsIntent$Builder:
     public void <init>(androidx.browser.customtabs.CustomTabsSession)
     public androidx.browser.customtabs.CustomTabsIntent$Builder addDefaultShareMenuItem()
@@ -347,11 +373,14 @@ androidx.browser.customtabs.CustomTabsIntent$Builder:
     public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent,boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonIcon(android.graphics.Bitmap)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonPosition(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setColorScheme(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setColorSchemeParams(int,androidx.browser.customtabs.CustomTabColorSchemeParams)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultColorSchemeParams(androidx.browser.customtabs.CustomTabColorSchemeParams)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultShareMenuItemEnabled(boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setExitAnimations(android.content.Context,int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int,int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setInstantAppsEnabled(boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarColor(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarDividerColor(int)
@@ -363,22 +392,35 @@ androidx.browser.customtabs.CustomTabsIntent$Builder:
     public androidx.browser.customtabs.CustomTabsIntent$Builder setShowTitle(boolean)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setStartAnimations(android.content.Context,int,int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarCornerRadiusDp(int)
     public androidx.browser.customtabs.CustomTabsIntent$Builder setUrlBarHidingEnabled(boolean)
+androidx.browser.customtabs.CustomTabsIntent$CloseButtonPosition
 androidx.browser.customtabs.CustomTabsIntent$ColorScheme
 androidx.browser.customtabs.CustomTabsIntent$ShareState
 androidx.browser.customtabs.CustomTabsIntent:
+    public static final int ACTIVITY_HEIGHT_ADJUSTABLE
+    public static final int ACTIVITY_HEIGHT_DEFAULT
+    public static final int ACTIVITY_HEIGHT_FIXED
+    private static final int ACTIVITY_HEIGHT_MAX
+    public static final int CLOSE_BUTTON_POSITION_DEFAULT
+    public static final int CLOSE_BUTTON_POSITION_END
+    private static final int CLOSE_BUTTON_POSITION_MAX
+    public static final int CLOSE_BUTTON_POSITION_START
     public static final int COLOR_SCHEME_DARK
     public static final int COLOR_SCHEME_LIGHT
     private static final int COLOR_SCHEME_MAX
     public static final int COLOR_SCHEME_SYSTEM
     public static final java.lang.String EXTRA_ACTION_BUTTON_BUNDLE
+    public static final java.lang.String EXTRA_ACTIVITY_HEIGHT_RESIZE_BEHAVIOR
     public static final java.lang.String EXTRA_CLOSE_BUTTON_ICON
+    public static final java.lang.String EXTRA_CLOSE_BUTTON_POSITION
     public static final java.lang.String EXTRA_COLOR_SCHEME
     public static final java.lang.String EXTRA_COLOR_SCHEME_PARAMS
     public static final java.lang.String EXTRA_DEFAULT_SHARE_MENU_ITEM
     public static final java.lang.String EXTRA_ENABLE_INSTANT_APPS
     public static final java.lang.String EXTRA_ENABLE_URLBAR_HIDING
     public static final java.lang.String EXTRA_EXIT_ANIMATION_BUNDLE
+    public static final java.lang.String EXTRA_INITIAL_ACTIVITY_HEIGHT_PX
     public static final java.lang.String EXTRA_MENU_ITEMS
     public static final java.lang.String EXTRA_NAVIGATION_BAR_COLOR
     public static final java.lang.String EXTRA_NAVIGATION_BAR_DIVIDER_COLOR
@@ -393,13 +435,16 @@ androidx.browser.customtabs.CustomTabsIntent:
     public static final java.lang.String EXTRA_TINT_ACTION_BUTTON
     public static final java.lang.String EXTRA_TITLE_VISIBILITY_STATE
     public static final java.lang.String EXTRA_TOOLBAR_COLOR
+    public static final java.lang.String EXTRA_TOOLBAR_CORNER_RADIUS_DP
     public static final java.lang.String EXTRA_TOOLBAR_ITEMS
     private static final java.lang.String EXTRA_USER_OPT_OUT_FROM_CUSTOM_TABS
+    private static final java.lang.String HTTP_ACCEPT_LANGUAGE
     public static final java.lang.String KEY_DESCRIPTION
     public static final java.lang.String KEY_ICON
     public static final java.lang.String KEY_ID
     public static final java.lang.String KEY_MENU_ITEM_TITLE
     public static final java.lang.String KEY_PENDING_INTENT
+    private static final int MAX_TOOLBAR_CORNER_RADIUS_DP
     private static final int MAX_TOOLBAR_ITEMS
     public static final int NO_TITLE
     public static final int SHARE_STATE_DEFAULT
@@ -408,8 +453,12 @@ androidx.browser.customtabs.CustomTabsIntent:
     public static final int SHARE_STATE_ON
     public static final int SHOW_PAGE_TITLE
     public static final int TOOLBAR_ACTION_BUTTON_ID
+    public static int getActivityResizeBehavior(android.content.Intent)
+    public static int getCloseButtonPosition(android.content.Intent)
     public static androidx.browser.customtabs.CustomTabColorSchemeParams getColorSchemeParams(android.content.Intent,int)
+    public static int getInitialActivityHeightPx(android.content.Intent)
     public static int getMaxToolbarItems()
+    public static int getToolbarCornerRadiusDp(android.content.Intent)
     public static android.content.Intent setAlwaysUseBrowserUI(android.content.Intent)
     public static boolean shouldAlwaysUseBrowserUI(android.content.Intent)
 androidx.browser.customtabs.CustomTabsService$1
@@ -3555,6 +3604,8 @@ androidx.lifecycle.LifecycleRegistry:
     public static final androidx.lifecycle.LifecycleRegistry createUnsafe(androidx.lifecycle.LifecycleOwner)
     public int getObserverCount()
     public static final androidx.lifecycle.Lifecycle$State min$lifecycle_runtime_release(androidx.lifecycle.Lifecycle$State,androidx.lifecycle.Lifecycle$State)
+androidx.lifecycle.LifecycleRegistryOwner:
+    public synthetic bridge androidx.lifecycle.Lifecycle getLifecycle()
 androidx.lifecycle.Lifecycling:
     private static final int GENERATED_CALLBACK
     private static final int REFLECTIVE_CALLBACK
@@ -15243,6 +15294,34 @@ com.google.type.TimeZone$1
 com.google.type.TimeZone$Builder
 com.google.type.TimeZone
 com.google.type.TimeZoneOrBuilder
+com.syncfusion.flutter.pdfviewer.BuildConfig
+com.syncfusion.flutter.pdfviewer.PdfRunnable:
+    public void dispose()
+com.syncfusion.flutter.pdfviewer.R$attr
+com.syncfusion.flutter.pdfviewer.R$color
+com.syncfusion.flutter.pdfviewer.R$dimen
+com.syncfusion.flutter.pdfviewer.R$drawable
+com.syncfusion.flutter.pdfviewer.R$id
+com.syncfusion.flutter.pdfviewer.R$integer
+com.syncfusion.flutter.pdfviewer.R$layout
+com.syncfusion.flutter.pdfviewer.R$string
+com.syncfusion.flutter.pdfviewer.R$style
+com.syncfusion.flutter.pdfviewer.R$styleable
+com.syncfusion.flutter.pdfviewer.R
+com.syncfusion.flutter.pdfviewer.SyncfusionFlutterPdfViewerPlugin:
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+dev.fluttercommunity.plus.device_info.BuildConfig
+dev.fluttercommunity.plus.device_info.R$attr
+dev.fluttercommunity.plus.device_info.R$color
+dev.fluttercommunity.plus.device_info.R$dimen
+dev.fluttercommunity.plus.device_info.R$drawable
+dev.fluttercommunity.plus.device_info.R$id
+dev.fluttercommunity.plus.device_info.R$integer
+dev.fluttercommunity.plus.device_info.R$layout
+dev.fluttercommunity.plus.device_info.R$string
+dev.fluttercommunity.plus.device_info.R$style
+dev.fluttercommunity.plus.device_info.R$styleable
+dev.fluttercommunity.plus.device_info.R
 firebase.com.protolitewrapper.BuildConfig
 firebase.com.protolitewrapper.R
 io.flutter.BuildConfig
@@ -16108,6 +16187,32 @@ io.flutter.plugins.pathprovider.R$style
 io.flutter.plugins.pathprovider.R$styleable
 io.flutter.plugins.pathprovider.R
 io.flutter.plugins.pathprovider.StorageDirectoryMapper
+io.flutter.plugins.urllauncher.BuildConfig
+io.flutter.plugins.urllauncher.Messages$WebViewOptions$Builder
+io.flutter.plugins.urllauncher.Messages:
+    public void <init>()
+io.flutter.plugins.urllauncher.R$attr
+io.flutter.plugins.urllauncher.R$color
+io.flutter.plugins.urllauncher.R$dimen
+io.flutter.plugins.urllauncher.R$drawable
+io.flutter.plugins.urllauncher.R$id
+io.flutter.plugins.urllauncher.R$integer
+io.flutter.plugins.urllauncher.R$layout
+io.flutter.plugins.urllauncher.R$string
+io.flutter.plugins.urllauncher.R$style
+io.flutter.plugins.urllauncher.R$styleable
+io.flutter.plugins.urllauncher.R$xml
+io.flutter.plugins.urllauncher.R
+io.flutter.plugins.urllauncher.UrlLauncher:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.UrlLauncherPlugin:
+    private static final java.lang.String TAG
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+io.flutter.plugins.urllauncher.WebViewActivity:
+    public static final java.lang.String ACTION_CLOSE
+    static final java.lang.String ENABLE_DOM_EXTRA
+    static final java.lang.String ENABLE_JS_EXTRA
+    static final java.lang.String URL_EXTRA
 io.flutter.util.HandlerCompat:
     public void <init>()
 io.flutter.util.PathUtils:
@@ -25101,7 +25206,6 @@ androidx.lifecycle.DefaultLifecycleObserver$-CC
 androidx.lifecycle.HasDefaultViewModelProviderFactory$-CC
 androidx.lifecycle.Lifecycle:
     private java.util.concurrent.atomic.AtomicReference internalScopeRef
-androidx.lifecycle.LifecycleRegistryOwner$-CC
 androidx.lifecycle.LiveData$LifecycleBoundObserver:
     void <init>(androidx.lifecycle.LiveData,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Observer)
     boolean isAttachedTo(androidx.lifecycle.LifecycleOwner)
@@ -25605,6 +25709,10 @@ io.flutter.plugins.imagepicker.ImagePickerPlugin$ActivityState:
     final synthetic io.flutter.plugins.imagepicker.ImagePickerPlugin this$0
 io.flutter.plugins.pathprovider.Messages$StorageDirectory:
     final int index
+io.flutter.plugins.urllauncher.UrlLauncher:
+    static final synthetic boolean $assertionsDisabled
+io.flutter.plugins.urllauncher.WebViewActivity$2:
+    final synthetic io.flutter.plugins.urllauncher.WebViewActivity this$0
 io.flutter.view.AccessibilityBridge$SemanticsNode:
     private float previousScrollExtentMax
     private float previousScrollExtentMin

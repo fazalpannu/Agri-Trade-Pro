@@ -62,7 +62,7 @@ library {
   maven_library {
     groupId: "androidx.annotation"
     artifactId: "annotation"
-    version: "1.6.0"
+    version: "1.7.0"
   }
   repo_index {
   }
@@ -71,10 +71,10 @@ library {
   maven_library {
     groupId: "androidx.annotation"
     artifactId: "annotation-jvm"
-    version: "1.6.0"
+    version: "1.7.0"
   }
   digests {
-    sha256: "`\261\v^\365v\233yW\001r\340\025\270\025\224\005\311/\003K\250\213\223\221\251wX\234\235\353N"
+    sha256: "\343k\216K\203\223\244\255\307N=J\262*\325\243c\226\360\316\242\344\vW4\352\341I7\337\322$"
   }
   repo_index {
   }
@@ -786,10 +786,10 @@ library {
   maven_library {
     groupId: "androidx.browser"
     artifactId: "browser"
-    version: "1.4.0"
+    version: "1.5.0"
   }
   digests {
-    sha256: "\341\220o\204Q/\036\245\344\311&\333\271\025x\232\330\367IO\244\356\232\322E\026?v\030\\\354\332"
+    sha256: "\224\362N\'+:&\237\371\245\272!\332^e&\025\334Y\254?\242\272-zZ\343\r\034M\367H"
   }
   repo_index {
   }
@@ -1187,6 +1187,16 @@ library {
 }
 library {
   maven_library {
+    groupId: "org.jetbrains.kotlin"
+    artifactId: "kotlin-bom"
+    version: "1.8.22"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
     groupId: "androidx.exifinterface"
     artifactId: "exifinterface"
     version: "1.3.6"
@@ -1195,16 +1205,6 @@ library {
     sha256: "\030\004\020^\236\005\375\330\367`A;\255]\344\230\303\201\2522\237O\235\224\310Q\274\211\032\306T\306"
   }
   repo_index {
-  }
-}
-library {
-  maven_library {
-    groupId: "org.jetbrains.kotlin"
-    artifactId: "kotlin-bom"
-    version: "1.8.22"
-  }
-  repo_index {
-    value: 1
   }
 }
 library {
@@ -1260,7 +1260,7 @@ library {
 }
 library {
   digests {
-    sha256: "\254Ec\003\207\0263s\310\365\371-!\321\326\270\220\211)\246\202\205tl\\\250m[\365/YK"
+    sha256: "\000_\266\247\030,5 \314\2276\373\324?\361\3301\377\3312J\335\270|\332\tA\037\221\320\272\325"
   }
 }
 library_dependencies {
@@ -1695,11 +1695,11 @@ library_dependencies {
 }
 library_dependencies {
   library_index: 65
+  library_dep_index: 5
   library_dep_index: 4
   library_dep_index: 13
-  library_dep_index: 15
   library_dep_index: 11
-  library_dep_index: 5
+  library_dep_index: 15
   library_dep_index: 14
 }
 library_dependencies {
@@ -1857,14 +1857,14 @@ library_dependencies {
 }
 library_dependencies {
   library_index: 97
-  library_dep_index: 5
+  library_dep_index: 7
+  library_dep_index: 43
+  library_dep_index: 8
+  library_dep_index: 42
 }
 library_dependencies {
   library_index: 98
-  library_dep_index: 43
-  library_dep_index: 7
-  library_dep_index: 8
-  library_dep_index: 42
+  library_dep_index: 5
 }
 module_dependencies {
   module_name: "base"
@@ -1879,11 +1879,13 @@ module_dependencies {
   dependency_index: 5
   dependency_index: 94
   dependency_index: 64
-  dependency_index: 72
+  dependency_index: 7
   dependency_index: 11
+  dependency_index: 65
   dependency_index: 97
-  dependency_index: 38
+  dependency_index: 72
   dependency_index: 98
+  dependency_index: 38
   dependency_index: 73
   dependency_index: 103
 }
@@ -1940,6 +1942,36 @@ repositories {
 repositories {
   maven_repo {
     url: "https://repo.maven.apache.org/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://jcenter.bintray.com/"
   }
 }
 repositories {

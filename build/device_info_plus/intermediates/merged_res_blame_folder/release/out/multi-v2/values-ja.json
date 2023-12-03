@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\device_info_plus\\intermediates\\merged_res\\release\\values-ja\\values-ja.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\flutter project\\flutter-ui-plant-app-main\\build\\device_info_plus\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ja\\values-ja.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Speed\\.gradle\\caches\\transforms-3\\255bfc453a2535bade485542a67aaef0\\transformed\\core-1.6.0\\res\\values-ja\\values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
