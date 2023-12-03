@@ -44,18 +44,24 @@ class _RootPageState extends State<RootPage> {
   //List of the pages icons
   List<IconData> iconList = [
     Icons.home,
-    Icons.favorite,
-    Icons.shopping_cart,
-    Icons.person,
+    Icons.chat,
+    Icons.help_center,
+    Icons.settings,
   ];
 
   //List of the pages titles
   List<String> titleList = [
     'Home',
-    'Favorite',
-    'Cart',
-    'Profile',
+    'Chat',
+    'Help Center',
+    'Settings',
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    authController.fetch();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,32 +78,52 @@ class _RootPageState extends State<RootPage> {
                 fontSize: 24,
               ),
             ),
-            InkWell(
-              onTap: () {
-                Get.to(() => const Road_map());
-              },
-              child: Icon(
-                Icons.integration_instructions_rounded,
-                color: Constants.primaryColor,
-                size: 35.0,
-              ),
+            // Padding(
+            //   padding: EdgeInsets.only(left: Get.width / 3),
+            //   child: InkWell(
+            //     onTap: () {
+            //       Get.to(() => const Road_map());
+            //     },
+            //     child: Icon(
+            //       Icons.integration_instructions_rounded,
+            //       color: Constants.primaryColor,
+            //       size: 40.0,
+            //     ),
+            //   ),
+            // ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width / 18),
+              child: InkWell(
+                  onTap: () {
+                    try {
+                      firebaseAuth.signOut().then((value) => Get.snackbar(
+                          "Logout", "You have successfully logged out!"));
+                      Get.to(SignIn());
+                    } catch (e) {
+                      Get.snackbar("Logout", "Error Logging out");
+                    }
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.logout,
+                          color: Constants.primaryColor,
+                          size: 26.0,
+                        ),
+                        Text(
+                          "Logout",
+                          style: TextStyle(
+                            color: Constants.primaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 8,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
             ),
-            InkWell(
-              onTap: () {
-                try {
-                  firebaseAuth.signOut().then((value) => Get.snackbar(
-                      "Logout", "You have successfully logged out!"));
-                  Get.to(SignIn());
-                } catch (e) {
-                  Get.snackbar("Logout", "Error Logging out");
-                }
-              },
-              child: Icon(
-                Icons.logout,
-                color: Constants.blackColor,
-                size: 30.0,
-              ),
-            )
           ],
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -123,23 +149,24 @@ class _RootPageState extends State<RootPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
-          splashColor: Constants.primaryColor,
-          activeColor: Constants.primaryColor,
-          inactiveColor: Colors.black.withOpacity(.5),
-          icons: iconList,
-          activeIndex: _bottomNavIndex,
-          gapLocation: GapLocation.center,
-          notchSmoothness: NotchSmoothness.softEdge,
-          onTap: (index) {
-            setState(() {
-              _bottomNavIndex = index;
-              final List<Plant> favoritedPlants = Plant.getFavoritedPlants();
-              final List<Plant> addedToCartPlants = Plant.addedToCartPlants();
+        splashColor: Constants.primaryColor,
+        activeColor: Constants.primaryColor,
+        inactiveColor: Colors.black.withOpacity(.5),
+        icons: iconList,
+        activeIndex: _bottomNavIndex,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.softEdge,
+        onTap: (index) {
+          setState(() {
+            _bottomNavIndex = index;
+            final List<Plant> favoritedPlants = Plant.getFavoritedPlants();
+            final List<Plant> addedToCartPlants = Plant.addedToCartPlants();
 
-              favorites = favoritedPlants;
-              myCart = addedToCartPlants.toSet().toList();
-            });
-          }),
+            favorites = favoritedPlants;
+            myCart = addedToCartPlants.toSet().toList();
+          });
+        },
+      ),
     );
   }
 }

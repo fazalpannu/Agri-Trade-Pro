@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
+import 'package:flutter_onboarding/ui/screens/imageupload.dart';
+import 'package:get/get.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({Key? key}) : super(key: key);
@@ -75,20 +77,41 @@ class _ScanPageState extends State<ScanPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/images/code-scan.png',
-                      height: 100,
+                    InkWell(
+                      onTap: () {
+                        // uploadController.selectImage().then((value) {
+                        //   if (value != null) {
+                        //     Get.to(() => imageupload());
+                        //   }
+                        // });
+                      },
+                      child: Image.asset(
+                        'assets/images/code-scan.png',
+                        height: 100,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      'Tap to Scan',
-                      style: TextStyle(
-                        color: Constants.primaryColor.withOpacity(.80),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                      ),
+                    Column(
+                      children: [
+                        Text(
+                          'Add Images\n',
+                          style: TextStyle(
+                            color: Constants.primaryColor.withOpacity(.80),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
+                        ),
+                        Text(
+                          '(for sale crop)',
+                          style: TextStyle(
+                            color: Constants.primaryColor.withOpacity(.80),
+                            fontWeight: FontWeight.w100,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

@@ -19,6 +19,8 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _cnicController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -104,7 +106,7 @@ class _SignUpState extends State<SignUp> {
                     CustomTextfield(
                       controller: _usernameController,
                       obscureText: false,
-                      hintText: 'Enter Full name',
+                      hintText: 'Enter Username',
                       icon: Icons.person,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -127,6 +129,32 @@ class _SignUpState extends State<SignUp> {
                         return null;
                       },
                     ),
+                    CustomTextfield(
+                      controller: _phoneController,
+                      obscureText: true,
+                      hintText: 'Enter PhoneNumber',
+                      icon: Icons.lock,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your PhoneNumber';
+                        }
+                        // Add email validation logic if needed
+                        return null;
+                      },
+                    ),
+                    CustomTextfield(
+                      controller: _cnicController,
+                      obscureText: true,
+                      hintText: 'Enter CNIC',
+                      icon: Icons.lock,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your CNIC';
+                        }
+                        // Add email validation logic if needed
+                        return null;
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -141,6 +169,8 @@ class _SignUpState extends State<SignUp> {
                       _emailController.text,
                       _passwordController.text,
                       authController.profilePhoto,
+                      _phoneController.text,
+                      _cnicController.text,
                     );
                     Get.offAll(const SignIn());
                   }
@@ -182,36 +212,36 @@ class _SignUpState extends State<SignUp> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                width: size.width,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Constants.primaryColor),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 35,
-                      child: Image.asset('assets/images/phone.png'),
-                    ),
-                    Text(
-                      'Sign Up with Phone Number',
-                      style: TextStyle(
-                        color: Constants.blackColor,
-                        fontSize: 18.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+              // Container(
+              //   width: size.width,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(color: Constants.primaryColor),
+              //     borderRadius: BorderRadius.circular(10),
+              //   ),
+              //   // padding: const EdgeInsets.symmetric(
+              //   //   horizontal: 10,
+              //   //   vertical: 6,
+              //   // ),
+              //   // child: Row(
+              //   //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //   //   children: <Widget>[
+              //   //     SizedBox(
+              //   //       height: 35,
+              //   //       child: Image.asset('assets/images/phone.png'),
+              //   //     ),
+              //   //     Text(
+              //   //       'Sign Up with Phone Number',
+              //   //       style: TextStyle(
+              //   //         color: Constants.blackColor,
+              //   //         fontSize: 18.0,
+              //   //       ),
+              //   //     ),
+              //   //   ],
+              //   // ),
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(

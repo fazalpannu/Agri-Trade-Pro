@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/controller/auth_controller.dart';
+import 'package:flutter_onboarding/controller/upload_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -30,3 +31,4 @@ var firestore = FirebaseFirestore.instance;
 
 // CONTROLLER
 AuthController authController = Get.put(AuthController());
+UploadController uploadController = Get.put(UploadController());

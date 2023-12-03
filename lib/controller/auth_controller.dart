@@ -101,8 +101,8 @@ class AuthController extends GetxController {
     }
   }
 
-  void registerUser(
-      String username, String email, String password, File? image) async {
+  void registerUser(String username, String email, String password, File? image,
+      String phonenumber, String cnic) async {
     try {
       if (username.isNotEmpty &&
           email.isNotEmpty &&
@@ -119,6 +119,8 @@ class AuthController extends GetxController {
           email: email,
           uid: cred.user!.uid,
           profilePhoto: downloadUrl,
+          cnic: cnic,
+          mobileNumber: phonenumber,
         );
         await firestore
             .collection('agriUsers')
