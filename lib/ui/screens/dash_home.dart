@@ -109,7 +109,7 @@ class DashboardScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          'Keys Features ',
+                          'Key Features ',
                           textAlign: TextAlign.right,
                           style: GoogleFonts.montserrat().copyWith(
                             fontWeight: FontWeight.w400,

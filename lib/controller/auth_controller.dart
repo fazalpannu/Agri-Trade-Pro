@@ -10,6 +10,7 @@ import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/ui/root_page.dart';
+import 'package:flutter_onboarding/ui/screens/home_page.dart';
 import 'package:flutter_onboarding/ui/screens/signin_page.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_onboarding/models/user.dart' as model;
@@ -57,14 +58,18 @@ class AuthController extends GetxController {
     return downloadUrl;
   }
 
-  void loginUser(String email, String password) async {
+  void loginUser(String email, String password, int mode) async {
     try {
       if (email.isNotEmpty && password.isNotEmpty) {
         await firebaseAuth
             .signInWithEmailAndPassword(email: email, password: password)
             .then((value) {
           Get.snackbar(' Login Successfully', '');
-          Get.to(RootPage());
+          if (mode == 0) {
+            Get.to(HomePage());
+          } else {
+            Get.to(RootPage());
+          }
         });
       } else {
         Get.snackbar(

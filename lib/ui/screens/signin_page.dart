@@ -123,8 +123,8 @@ class _SignInState extends State<SignIn> {
                     if (_formKey.currentState!.validate()) {
                       authController.loginUser(
                           _emailController.text,
-                          _passwordController
-                              .text); // Form is valid, you can proceed with sign-in logic
+                          _passwordController.text,
+                          selectedModeIndex); // Form is valid, you can proceed with sign-in logic
                       // Access email and password using _emailController.text and _passwordController.text
                     }
                   },

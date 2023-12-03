@@ -105,7 +105,7 @@ class _imageuploadState extends State<imageupload> {
                   if (_formKey.currentState!.validate()) {
                     uploadController.sellerdetails(
                         _cropname.text, _cropdescription.text);
-                    Get.snackbar('Success', 'Crop Added Successfully');
+                    // Get.snackbar('Success', 'Crop Added Successfully');
                     _cropname.clear();
                     _cropdescription.clear();
                   }
