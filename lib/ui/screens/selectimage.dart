@@ -23,8 +23,8 @@ class selectimage extends StatelessWidget {
                 });
               },
               child: Container(
-                height: 100,
-                width: 100,
+                height: 90,
+                width: 90,
                 decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: BorderRadius.circular(20),
@@ -32,7 +32,7 @@ class selectimage extends StatelessWidget {
                 child: Icon(
                   Icons.camera_alt,
                   color: Colors.white,
-                  size: 80,
+                  size: 60,
                 ),
               ),
             ),
