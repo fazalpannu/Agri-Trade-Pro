@@ -18,13 +18,13 @@ class _imageuploadState extends State<imageupload> {
     TextEditingController _cropname = TextEditingController();
     TextEditingController _cropdescription = TextEditingController();
     final _formKey = GlobalKey<FormState>();
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Constants.primaryColor,
-        title: Text('Sell Crop'),
-      ),
-      body: SafeArea(
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Constants.primaryColor,
+          title: Text('Sell Crop'),
+        ),
+        body: Column(
           children: <Widget>[
             SizedBox(
               height: 70,
