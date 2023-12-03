@@ -21,8 +21,18 @@ class _imageuploadState extends State<imageupload> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Constants.primaryColor,
-          title: Text('Sell Crop'),
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: Constants.primaryColor,
+            ),
+          ),
+          title: Text('Sell Crop',
+              style: TextStyle(color: Constants.primaryColor)),
         ),
         body: Column(
           children: <Widget>[
@@ -90,70 +100,39 @@ class _imageuploadState extends State<imageupload> {
                         crossAxisSpacing: 8,
                       ),
                     )))),
-            // Container(
-            //   height: 200,
-            //   width: double.infinity,
-            //   decoration: BoxDecoration(
-            //     color: Colors.grey,
-            //     borderRadius: BorderRadius.circular(20),
-            //   ),
-            //   child: Icon(
-            //     Icons.camera_alt,
-            //     color: Colors.white,
-            //     size: 100,
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Text(
-            //   'Upload Image',
-            //   style: TextStyle(
-            //     fontSize: 20,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // Text(
-            //   'Upload your image to get the result',
-            //   style: TextStyle(
-            //     fontSize: 16,
-            //     color: Colors.grey,
-            //   ),
-            // ),
-
             InkWell(
-              onTap: () {
-                if (_formKey.currentState!.validate()) {
-                  uploadController.sellerdetails(
-                      _cropname.text, _cropdescription.text);
-                  Get.snackbar('Success', 'Crop Added Successfully');
-                  _cropname.clear();
-                  _cropdescription.clear();
-                }
-              },
-              child: Container(
-                height: 50,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Constants.primaryColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    'Upload ',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    uploadController.sellerdetails(
+                        _cropname.text, _cropdescription.text);
+                    Get.snackbar('Success', 'Crop Added Successfully');
+                    _cropname.clear();
+                    _cropdescription.clear();
+                  }
+                },
+                child: Obx(
+                  () => uploadController.loading.value == 1
+                      ? CircularProgressIndicator()
+                      : Container(
+                          height: 50,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            color: Constants.primaryColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Upload ',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                )),
             SizedBox(
-              height: 50,
+              height: 40,
             ),
           ],
         ),

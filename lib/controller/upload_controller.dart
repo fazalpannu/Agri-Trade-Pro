@@ -14,6 +14,7 @@ import 'package:image_picker/image_picker.dart';
 class UploadController extends GetxController {
   final ImagePicker imagePicker = ImagePicker();
   List<XFile> imageList = <XFile>[].obs;
+  RxInt loading = RxInt(0);
   Future<int> selectImage() async {
     try {
       final List<XFile> selectedImage = await imagePicker.pickMultiImage();
@@ -45,6 +46,7 @@ class UploadController extends GetxController {
 
   sellerdetails(String cropname, String cropdescription) async {
     try {
+      loading.value = 1;
       String uid = firebaseAuth.currentUser!.uid;
       DocumentSnapshot userDoc =
           await firestore.collection('agriUsers').doc(uid).get();
@@ -100,6 +102,7 @@ class UploadController extends GetxController {
           .then((value) {
         Get.snackbar('Details Upload  Successfully! ', '');
         imageList.clear();
+        loading.value = 0;
       });
       // Get.back();
     } catch (e) {
