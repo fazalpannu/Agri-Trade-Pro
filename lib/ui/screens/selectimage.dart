@@ -16,11 +16,7 @@ class selectimage extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                uploadController.selectImage().then((value) {
-                  if (value != null) {
-                    Get.to(() => imageupload());
-                  }
-                });
+                uploadController.selectImage().then((value) {});
               },
               child: Container(
                 height: 90,

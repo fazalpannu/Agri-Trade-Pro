@@ -4,6 +4,8 @@ import 'package:flutter_onboarding/ui/root_page.dart';
 import 'package:flutter_onboarding/ui/screens/forgot_password.dart';
 import 'package:flutter_onboarding/ui/screens/signup_page.dart';
 import 'package:flutter_onboarding/ui/screens/widgets/custom_textfield.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_utils/src/get_utils/get_utils.dart';
 import 'package:page_transition/page_transition.dart';
 
 class SignIn extends StatefulWidget {
@@ -97,26 +99,55 @@ class _SignInState extends State<SignIn> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
+                    } else if (!value.contains('@')) {
+                      return 'Please enter a valid email';
+                    } else if (!GetUtils.isEmail(value)) {
+                      return 'Please enter a valid email';
                     }
                     // Add email validation logic if needed
                     return null;
                   },
                 ),
-                CustomTextfield(
-                  controller: _passwordController,
-                  obscureText: true,
-                  hintText: 'Enter Password',
-                  icon: Icons.lock,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
-                    }
-                    // Add password validation logic if needed
-                    return null;
-                  },
+                Obx(
+                  () => TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    controller: _passwordController,
+                    obscureText: authController.isLogin.value,
+                    style: TextStyle(
+                      color: Constants.blackColor,
+                    ),
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: authController.isLogin.value
+                            ? Icon(Icons.visibility_off)
+                            : Icon(Icons.visibility),
+                        onPressed: () {
+                          authController.isLogin.value =
+                              !authController.isLogin.value;
+                        },
+                      ),
+                      border: InputBorder.none,
+                      prefixIcon: Icon(
+                        Icons.password_sharp,
+                        color: Constants.blackColor.withOpacity(.3),
+                      ),
+                      hintText: 'Enter Password',
+                    ),
+                    cursorColor: Constants.blackColor.withOpacity(.5),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your password';
+                      } else if (value.length < 6) {
+                        return 'Password must be at least 6 characters long';
+                      }
+
+                      // Add password validation logic if needed
+                      return null;
+                    },
+                  ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -136,14 +167,19 @@ class _SignInState extends State<SignIn> {
                     ),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 13),
-                    child: const Center(
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
-                      ),
+                    child: Center(
+                      child: Obx(() => authController.loading.value == true
+                          ? const CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : const Text(
+                              'Sign In',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )),
                     ),
                   ),
                 ),
@@ -178,7 +214,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 Row(
                   children: const [
@@ -191,35 +227,11 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
-                // Container(
-                //   width: size.width,
-                //   decoration: BoxDecoration(
-                //       border: Border.all(color: Constants.primaryColor),
-                //       borderRadius: BorderRadius.circular(10)),
-                //   padding:
-                //       const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //     children: [
-                //       SizedBox(
-                //         height: 30,
-                //         child: Image.asset('assets/images/google.png'),
-                //       ),
-                //       Text(
-                //         'Sign In with Google',
-                //         style: TextStyle(
-                //           color: Constants.blackColor,
-                //           fontSize: 18.0,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                // const SizedBox(
-                //   height: 20,
-                // ),
+                const SizedBox(
+                  height: 5,
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(

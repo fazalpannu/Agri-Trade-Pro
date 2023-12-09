@@ -50,7 +50,13 @@ class _imageuploadState extends State<imageupload> {
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Please enter some text';
+                          } else if (value.length < 3) {
+                            return 'Crop Name must be atleast 3 characters long';
+                          } else if (RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
+                              .hasMatch(value)) {
+                            return 'Please enter only alphabets';
                           }
+
                           return null;
                         },
                         controller: _cropname,
@@ -67,8 +73,15 @@ class _imageuploadState extends State<imageupload> {
 
                       TextFormField(
                         maxLines: 4,
-                        validator: (value) =>
-                            value!.isEmpty ? 'Please enter some text' : null,
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Please enter some text';
+                          } else if (value.length < 10) {
+                            return 'Crop Description must be atleast 3 characters long';
+                          }
+
+                          return null;
+                        },
                         controller: _cropdescription,
                         decoration: InputDecoration(
                           hintText: 'Enter Crop Description',

@@ -117,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         try {
                           firebaseAuth.signOut().then((value) => Get.snackbar(
                               "Logout", "You have successfully logged out!"));
-                          Get.to(SignIn());
+                          Get.offAll(() => const SignIn());
                         } catch (e) {
                           Get.snackbar("Logout", "Error Logging out");
                         }

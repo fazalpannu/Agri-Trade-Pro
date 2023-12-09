@@ -103,7 +103,7 @@ class DashboardScreen extends StatelessWidget {
                   color: sparatorColor,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 40),
+                  padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20),
                   child: Column(
                     children: [
                       Align(

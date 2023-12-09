@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -37,7 +38,7 @@ class _SignUpState extends State<SignUp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: size.height * 0.2,
+                height: size.height * 0.15,
               ),
               Center(
                 child: Stack(
@@ -98,7 +99,10 @@ class _SignUpState extends State<SignUp> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
+                        } else if (!GetUtils.isEmail(value)) {
+                          return 'Please enter a valid email';
                         }
+
                         // Add email validation logic if needed
                         return null;
                       },
@@ -111,32 +115,65 @@ class _SignUpState extends State<SignUp> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your full name';
+                        } else if (value.length < 7) {
+                          return 'Please enter a valid name length';
+                        } else if (value.contains(RegExp(r'[0-9]'))) {
+                          return 'Please enter  not Numeric in name';
                         }
                         // Add email validation logic if needed
                         return null;
                       },
                     ),
-                    CustomTextfield(
-                      controller: _passwordController,
-                      obscureText: true,
-                      hintText: 'Enter Password',
-                      icon: Icons.lock,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
-                        }
-                        // Add email validation logic if needed
-                        return null;
-                      },
+                    Obx(
+                      () => TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        controller: _passwordController,
+                        obscureText: authController.isLogin.value,
+                        style: TextStyle(
+                          color: Constants.blackColor,
+                        ),
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            icon: authController.isLogin.value
+                                ? Icon(Icons.visibility_off)
+                                : Icon(Icons.visibility),
+                            onPressed: () {
+                              authController.isLogin.value =
+                                  !authController.isLogin.value;
+                            },
+                          ),
+                          border: InputBorder.none,
+                          prefixIcon: Icon(
+                            Icons.password_sharp,
+                            color: Constants.blackColor.withOpacity(.3),
+                          ),
+                          hintText: 'Enter Password',
+                        ),
+                        cursorColor: Constants.blackColor.withOpacity(.5),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          } else if (value.length < 6) {
+                            return 'Password must be at least 6 characters long';
+                          }
+
+                          // Add password validation logic if needed
+                          return null;
+                        },
+                      ),
                     ),
                     CustomTextfield(
                       controller: _phoneController,
-                      obscureText: true,
+                      obscureText: false,
                       hintText: 'Enter PhoneNumber',
-                      icon: Icons.lock,
+                      icon: Icons.mobile_friendly,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your PhoneNumber';
+                        } else if (value.length < 11) {
+                          return 'Please enter a valid PhoneNumber';
+                        } else if (value.contains(RegExp(r'[a-zA-Z]'))) {
+                          return 'Please enter a valid PhoneNumber';
                         }
                         // Add email validation logic if needed
                         return null;
@@ -144,13 +181,18 @@ class _SignUpState extends State<SignUp> {
                     ),
                     CustomTextfield(
                       controller: _cnicController,
-                      obscureText: true,
-                      hintText: 'Enter CNIC',
-                      icon: Icons.lock,
+                      obscureText: false,
+                      hintText: 'Enter CNIC e.g: 3505532716199',
+                      icon: Icons.credit_card,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your CNIC';
+                        } else if (value.length < 13) {
+                          return 'Please enter a valid CNIC';
+                        } else if (value.contains(RegExp(r'[a-zA-Z]'))) {
+                          return 'Please enter a valid CNIC';
                         }
+
                         // Add email validation logic if needed
                         return null;
                       },
@@ -159,7 +201,7 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               GestureDetector(
                 onTap: () {
@@ -172,7 +214,6 @@ class _SignUpState extends State<SignUp> {
                       _phoneController.text,
                       _cnicController.text,
                     );
-                    Get.offAll(const SignIn());
                   }
                 },
                 child: Container(
@@ -185,14 +226,18 @@ class _SignUpState extends State<SignUp> {
                     horizontal: 11,
                     vertical: 13,
                   ),
-                  child: const Center(
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                      ),
-                    ),
+                  child: Center(
+                    child: Obx(() => authController.loading.value == true
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                          )),
                   ),
                 ),
               ),
@@ -210,7 +255,7 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               // Container(
               //   width: size.width,

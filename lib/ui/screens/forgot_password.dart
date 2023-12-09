@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/ui/screens/widgets/custom_textfield.dart';
 import 'package:flutter_onboarding/ui/screens/signin_page.dart';
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/get_utils/get_utils.dart';
 import 'package:page_transition/page_transition.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -55,6 +57,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your email';
+                          } else if (!GetUtils.isEmail(value)) {
+                            return 'Please enter a valid email';
                           }
                           // You can add more email validation logic here if needed.
                           return null;
@@ -82,14 +86,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 10, vertical: 15),
-                    child: const Center(
-                      child: Text(
-                        'Reset Password',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
-                      ),
+                    child: Center(
+                      child: Obx(() => authController.loading.value
+                          ? const CircularProgressIndicator(
+                              color: Colors.white,
+                            )
+                          : Text(
+                              'Reset Password',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )),
                     ),
                   ),
                 ),

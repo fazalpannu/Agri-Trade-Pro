@@ -5,6 +5,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/cropsellerdetails.dart';
+import 'package:flutter_onboarding/ui/root_page.dart';
+import 'package:flutter_onboarding/ui/screens/imageupload.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
@@ -15,13 +17,20 @@ class UploadController extends GetxController {
   final ImagePicker imagePicker = ImagePicker();
   List<XFile> imageList = <XFile>[].obs;
   RxInt loading = RxInt(0);
-  Future<int> selectImage() async {
+  Future<String> selectImage() async {
     try {
       final List<XFile> selectedImage = await imagePicker.pickMultiImage();
-      if (selectedImage != null) {
+      if (selectedImage.isNotEmpty) {
         imageList.addAll(selectedImage);
         Get.snackbar(
             'Image Selected', 'You have successfully selected an image');
+        {
+          Get.to(() => imageupload());
+        }
+        return 'true';
+      } else {
+        Get.snackbar('Image Not Selected', 'You have not selected an image');
+        return '';
       }
     } catch (e) {
       Get.snackbar(
@@ -29,7 +38,7 @@ class UploadController extends GetxController {
         e.toString(),
       );
     }
-    return 1;
+    return '';
   }
 
   Future<String> _uploadToStorage(File image, int le) async {
@@ -103,6 +112,7 @@ class UploadController extends GetxController {
         Get.snackbar('Details Upload  Successfully! ', '');
         imageList.clear();
         loading.value = 0;
+        Get.to(RootPage());
       });
       // Get.back();
     } catch (e) {

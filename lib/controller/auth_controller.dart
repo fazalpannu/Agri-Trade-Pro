@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
@@ -19,7 +19,8 @@ import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   RxInt pageIdx = 0.obs;
-
+  RxBool isLogin = true.obs;
+  RxBool loading = false.obs;
   RxString name = ''.obs;
   RxString photo = ''.obs;
   RxString email = ''.obs;
@@ -60,10 +61,12 @@ class AuthController extends GetxController {
 
   void loginUser(String email, String password, int mode) async {
     try {
+      loading.value = true;
       if (email.isNotEmpty && password.isNotEmpty) {
         await firebaseAuth
             .signInWithEmailAndPassword(email: email, password: password)
             .then((value) {
+          loading.value = false;
           Get.snackbar(' Login Successfully', '');
           if (mode == 0) {
             Get.to(HomePage());
@@ -87,8 +90,10 @@ class AuthController extends GetxController {
 
   void forgetpassword(String email) async {
     try {
+      loading.value = true;
       if (email.isNotEmpty) {
         await firebaseAuth.sendPasswordResetEmail(email: email).then((value) {
+          loading.value = false;
           Get.snackbar('Send Mail for Reset Password ', '');
           Get.to(SignIn());
         });
@@ -106,14 +111,36 @@ class AuthController extends GetxController {
     }
   }
 
+  // void signwithgoogle() async {
+  //   try {
+  //     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  //     final GoogleSignInAuthentication googleAuth =
+  //         await googleUser!.authentication;
+  //     final credential = GoogleAuthProvider.credential(
+  //       accessToken: googleAuth.accessToken,
+  //       idToken: googleAuth.idToken,
+  //     );
+  //     await firebaseAuth.signInWithCredential(credential).then((value) {
+  //       Get.snackbar(' Login Successfully', '');
+  //       Get.to(RootPage());
+  //     });
+  //   } catch (e) {
+  //     Get.snackbar(
+  //       'Error Loggin gin',
+  //       e.toString(),
+  //     );
+  //   }
+  // }
+
   void registerUser(String username, String email, String password, File? image,
       String phonenumber, String cnic) async {
+    loading.value = true;
     try {
       if (username.isNotEmpty &&
           email.isNotEmpty &&
           password.isNotEmpty &&
           image != null) {
-        // save out user to our ath and firebase firestore
+        // save our user to our auth and firebase firestore
         UserCredential cred = await firebaseAuth.createUserWithEmailAndPassword(
           email: email,
           password: password,
@@ -133,8 +160,10 @@ class AuthController extends GetxController {
             .set(user.toJson())
             .then(
           (value) {
+            loading.value = false;
+            Get.offAll(const SignIn());
             Get.snackbar(
-              ' Create Account',
+              'Create Account',
               'Thank You!',
             );
 
