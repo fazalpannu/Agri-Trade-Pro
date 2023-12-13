@@ -6,10 +6,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_onboarding/constants.dart';
+import 'package:flutter_onboarding/models/update_user.dart';
+import 'package:flutter_onboarding/models/update_user.dart';
+import 'package:flutter_onboarding/models/update_user.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/models/user.dart';
 import 'package:flutter_onboarding/ui/root_page.dart';
+import 'package:flutter_onboarding/ui/screens/dash_home.dart';
 import 'package:flutter_onboarding/ui/screens/home_page.dart';
 import 'package:flutter_onboarding/ui/screens/signin_page.dart';
 import 'package:image_picker/image_picker.dart';
@@ -25,7 +29,7 @@ class AuthController extends GetxController {
   RxString photo = ''.obs;
   RxString email = ''.obs;
 
-  late Rx<File?> _pickedImage;
+  late Rx<File?> _pickedImage = Rx<File?>(null);
   RxString imagepath = ''.obs;
   // static AuthController instance = Get.find();
   File? get profilePhoto => _pickedImage.value;
@@ -69,18 +73,21 @@ class AuthController extends GetxController {
           loading.value = false;
           Get.snackbar(' Login Successfully', '');
           if (mode == 0) {
-            Get.to(HomePage());
+            Get.offAll(HomePage());
+            // Get.to(HomePage());
           } else {
-            Get.to(RootPage());
+            Get.offAll(RootPage());
           }
         });
       } else {
+        loading.value = false;
         Get.snackbar(
           'Error Logging in',
           'Please enter all the fields',
         );
       }
     } catch (e) {
+      loading.value = false;
       Get.snackbar(
         'Error Loggin gin',
         e.toString(),
@@ -98,12 +105,14 @@ class AuthController extends GetxController {
           Get.to(SignIn());
         });
       } else {
+        loading.value = false;
         Get.snackbar(
           'Error Logging in',
           'Please enter all the fields',
         );
       }
     } catch (e) {
+      loading.value = false;
       Get.snackbar(
         'Error Loggin gin',
         e.toString(),
@@ -139,7 +148,8 @@ class AuthController extends GetxController {
       if (username.isNotEmpty &&
           email.isNotEmpty &&
           password.isNotEmpty &&
-          image != null) {
+          image != null &&
+          _pickedImage.value != null) {
         // save our user to our auth and firebase firestore
         UserCredential cred = await firebaseAuth.createUserWithEmailAndPassword(
           email: email,
@@ -172,12 +182,14 @@ class AuthController extends GetxController {
           },
         );
       } else {
+        loading.value = false;
         Get.snackbar(
           'Error Creating Account',
           'Please enter all the fields',
         );
       }
     } catch (e) {
+      loading.value = false;
       Get.snackbar(
         'Error Creating Account',
         e.toString(),
@@ -208,6 +220,107 @@ class AuthController extends GetxController {
           ));
     } else {
       print('User is currently signed out!');
+    }
+  }
+
+  void updateprofile(
+      String username, String email, File? image, String phonenumber) async {
+    loading.value = true;
+    String update_mobileNumber = '';
+    String update_username = '';
+    String update_photo = '';
+    int i = 0;
+    try {
+      final cred = firebaseAuth.currentUser;
+      if (username.isEmpty) {
+        await firestore
+            .collection('agriUsers')
+            .doc(cred!.uid)
+            .get()
+            .then((value) {
+          print(value.data());
+          update_username = (value.data()! as Map<String, dynamic>)['name'];
+        });
+      } else if (username.isNotEmpty) {
+        update_username = username;
+      }
+      if (image != null) {
+        update_photo = await _uploadToStorage(image);
+      } else if (image == null) {
+        await firestore
+            .collection('agriUsers')
+            .doc(cred!.uid)
+            .get()
+            .then((value) {
+          print(value.data());
+
+          update_photo =
+              (value.data()! as Map<String, dynamic>)['profilePhoto'];
+        });
+      }
+      if (phonenumber.isNotEmpty) {
+        update_mobileNumber = phonenumber;
+      } else if (phonenumber == null) {
+        await firestore
+            .collection('agriUsers')
+            .doc(cred!.uid)
+            .get()
+            .then((value) {
+          print(value.data());
+
+          update_mobileNumber =
+              (value.data()! as Map<String, dynamic>)['mobileNumber'];
+        });
+      }
+
+      if (email.isNotEmpty) {
+        // save our user to our auth and firebase firestore
+        i = 0;
+        try {
+          await firebaseAuth.sendPasswordResetEmail(email: email).then((value) {
+            Get.snackbar('Send Mail for Reset Password ', '');
+          });
+        } catch (e) {
+          Get.snackbar(
+            'Error in Email',
+            e.toString(),
+          );
+          i = 1;
+        }
+      }
+      if (i == 1) {
+        loading.value = false;
+      } else {
+        update_User user = update_User(
+          name: update_username,
+          uid: cred!.uid,
+          profilePhoto: update_photo,
+          mobileNumber: update_mobileNumber,
+        );
+        firestore
+            .collection('agriUsers')
+            .doc(cred!.uid)
+            .update(user.toJson())
+            .then(
+          (value) {
+            loading.value = false;
+            Get.offAll(const RootPage());
+            Get.snackbar(
+              'Update Account',
+              'Thank You!',
+            );
+
+            _pickedImage = Rx<File?>(null);
+            imagepath.value = '';
+          },
+        );
+      }
+    } catch (e) {
+      loading.value = false;
+      Get.snackbar(
+        'Error Creating Account',
+        e.toString(),
+      );
     }
   }
 }

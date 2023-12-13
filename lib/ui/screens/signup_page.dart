@@ -97,8 +97,10 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'Enter Email',
                       icon: Icons.alternate_email,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.contains(' ')) {
+                          return 'Please enter your email without spaces';
                         } else if (!GetUtils.isEmail(value)) {
                           return 'Please enter a valid email';
                         }
@@ -113,9 +115,11 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'Enter Username',
                       icon: Icons.person,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your full name';
-                        } else if (value.length < 7) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.contains(' ')) {
+                          return 'Please enter your full name without spaces';
+                        } else if (value.length < 10) {
                           return 'Please enter a valid name length';
                         } else if (value.contains(RegExp(r'[0-9]'))) {
                           return 'Please enter  not Numeric in name';
@@ -151,8 +155,10 @@ class _SignUpState extends State<SignUp> {
                         ),
                         cursorColor: Constants.blackColor.withOpacity(.5),
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
+                          if (value == null ||
+                              value.isEmpty ||
+                              value.contains(' ')) {
+                            return 'Please enter your password without spaces';
                           } else if (value.length < 6) {
                             return 'Password must be at least 6 characters long';
                           }
@@ -168,9 +174,11 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'Enter PhoneNumber',
                       icon: Icons.mobile_friendly,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your PhoneNumber';
-                        } else if (value.length < 11) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.contains(' ')) {
+                          return 'Please enter your PhoneNumber without spaces';
+                        } else if (value.length < 11 || value.length > 11) {
                           return 'Please enter a valid PhoneNumber';
                         } else if (value.contains(RegExp(r'[a-zA-Z]'))) {
                           return 'Please enter a valid PhoneNumber';
@@ -185,9 +193,11 @@ class _SignUpState extends State<SignUp> {
                       hintText: 'Enter CNIC e.g: 3505532716199',
                       icon: Icons.credit_card,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your CNIC';
-                        } else if (value.length < 13) {
+                        if (value == null ||
+                            value.isEmpty ||
+                            value.contains(' ')) {
+                          return 'Please enter your CNIC without spaces';
+                        } else if (value.length < 13 || value.length > 13) {
                           return 'Please enter a valid CNIC';
                         } else if (value.contains(RegExp(r'[a-zA-Z]'))) {
                           return 'Please enter a valid CNIC';

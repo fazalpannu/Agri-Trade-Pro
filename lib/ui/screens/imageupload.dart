@@ -77,7 +77,7 @@ class _imageuploadState extends State<imageupload> {
                           if (value!.isEmpty) {
                             return 'Please enter some text';
                           } else if (value.length < 10) {
-                            return 'Crop Description must be atleast 3 characters long';
+                            return 'Crop Description must be atleast 10 characters long';
                           }
 
                           return null;

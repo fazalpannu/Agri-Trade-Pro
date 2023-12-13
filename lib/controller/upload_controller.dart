@@ -70,7 +70,7 @@ class UploadController extends GetxController {
         String url = await _uploadToStorage(File(img.path), i);
         downloadUrls.add(url);
         i = i + 1;
-        Get.snackbar('Image Uploaded', 'Your image has been uploaded');
+        Get.snackbar('Image Uploaded', 'Your image has been uploaded $i');
       }
 
       print(downloadUrls);
