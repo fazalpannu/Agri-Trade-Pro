@@ -13,15 +13,15 @@ class Constants {
   static var blackColor = Colors.black54;
 
   //Onboarding texts
-  static var titleOne = "Learn more about plants";
+  static var titleOne = "Buyer and Seller  ";
   static var descriptionOne =
-      "Read how to care for plants in our rich plants guide.";
-  static var titleTwo = "Find a plant lover friend";
+      "Seller can sell their crops and buyer can buy crops from seller.";
+  static var titleTwo = "Price Prediction";
   static var descriptionTwo =
-      "Are you a plant lover? Connect with other plant lovers.";
-  static var titleThree = "Plant a tree, green the Earth";
+      "We will predict the price of crops based on the previous data.";
+  static var titleThree = "Disease Detection and Medicine Suggestions";
   static var descriptionThree =
-      "Find almost all types of plants that you like here.";
+      "We will detect the disease of crops and suggest the medicine for that disease.";
 }
 
 // FIREBASE

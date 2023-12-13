@@ -67,17 +67,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             controller: _pageController,
             children: [
               createPage(
-                image: 'assets/images/plant-one.png',
+                image: 'assets/images/BuyerSeller11.png',
                 title: Constants.titleOne,
                 description: Constants.descriptionOne,
               ),
               createPage(
-                image: 'assets/images/plant-two.png',
+                image: 'assets/images/PricePrediction11.png',
                 title: Constants.titleTwo,
                 description: Constants.descriptionTwo,
               ),
               createPage(
-                image: 'assets/images/plant-three.png',
+                image: 'assets/images/MedicinePrediction.png',
                 title: Constants.titleThree,
                 description: Constants.descriptionThree,
               ),
@@ -190,7 +190,7 @@ class createPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Constants.primaryColor,
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),
