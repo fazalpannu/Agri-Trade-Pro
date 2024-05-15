@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    width: 60%; /* Adjust based on preferred width */
+    margin: 40px auto; /* Centers the container and adds vertical spacing */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.result-box, .recommendations {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.result-label {
+    font-size: 24px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.recommendation-item {
+    width: 100%; /* Full width to maintain consistency */
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center; /* Ensures text and images are centered */
+}
+
+.recommendation-item img {
+    width: 120px; /* Fixed size for images */
+    height: 120px;
+    object-fit: cover; /* Ensures images don't distort */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
